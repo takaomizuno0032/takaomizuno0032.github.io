@@ -1,16 +1,111 @@
 ---
-title: トップページ
+title: Takao Mizuno - Research Engineer
+description: Research Engineer at Preferred Networks Inc. Interested in security, data privacy, and blockchain technology.
 layout: ../layouts/Layout.astro
 ---
 
-# ようこそ
+<style is:global>
+	.hobby-images {
+		display: flex;
+		gap: 1.5rem;
+		margin: 1.5rem 0;
+		flex-wrap: wrap;
+	}
 
-研究と趣味のページへようこそ。
+	.image-wrapper {
+		position: relative;
+		display: inline-block;
+		max-width: 300px;
+	}
 
-## このサイトについて
+	.hobby-images img {
+		max-width: 300px;
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+		border-radius: 4px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+		display: block;
+	}
 
-このサイトでは、私の研究活動や趣味について紹介しています。
+	.image-wrapper:hover img {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+		filter: brightness(0.95);
+	}
 
-## リンク
+	.image-popup {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, 0.85);
+		backdrop-filter: blur(10px);
+		color: #fff;
+		padding: 1.5rem;
+		border-radius: 0 0 4px 4px;
+		opacity: 0;
+		transform: translateY(10px);
+		transition: opacity 0.3s ease, transform 0.3s ease;
+		pointer-events: none;
+		font-size: 0.9rem;
+		line-height: 1.6;
+	}
 
-- [研究](./research.md)
+	.image-wrapper:hover .image-popup {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.image-popup p {
+		margin: 0;
+		color: #fff;
+	}
+
+	@media (max-width: 640px) {
+		.hobby-images {
+			flex-direction: column;
+		}
+
+		.image-wrapper {
+			max-width: 100%;
+		}
+
+		.hobby-images img {
+			max-width: 100%;
+		}
+	}
+</style>
+
+# Takao Mizuno
+
+## 自己紹介
+
+技術によって社会を良くしていくことに貢献することが自分の存在意義だと思っています。セキュリティ、データの安全な扱い、ブロックチェーンに興味があります。
+
+## Education
+
+- **2024**, M.S. in Information Technology at The University of Queensland  
+  Lab: UQ Cyber (Nominated in one of the best master thesis)
+- **2020**, Bachelor in Education at The University of Tokyo
+
+## Work Experience
+
+- **2022~Current**, Freelance Engineer  
+  Ex. Gaiax, Inc., Research Engineer; PeopleX Inc., AI Engineer
+- **2024~2025**, Secure Vertex Inc., Chief Technology Officer
+- **2020~2022**, Amiya, Inc., Software Engineer
+
+## 趣味
+
+ワインとコーヒー
+
+<div class="hobby-images">
+  <div class="image-wrapper">
+    <img src="/index/wine.jpg" alt="ワイン" />
+    <div class="image-popup">
+      <p>ワインとコーヒーを楽しむ時間は、研究の合間の大切なリフレッシュタイムです。</p>
+    </div>
+  </div>
+</div>
