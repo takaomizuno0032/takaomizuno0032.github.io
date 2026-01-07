@@ -93,7 +93,10 @@ layout: ../layouts/Layout.astro
 ## Work Experience
 
 - **2022~Current**, Freelance Engineer  
-  Ex. Gaiax, Inc., Research Engineer; PeopleX Inc., AI Engineer
+  - Ex. 
+    - Gaiax, Inc., Research Engineer
+    - PeopleX Inc., AI Engineer
+    - Preferred Networks Inc., Research Engineer
 - **2024~2025**, Secure Vertex Inc., Chief Technology Officer
 - **2020~2022**, Amiya, Inc., Software Engineer
 
