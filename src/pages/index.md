@@ -105,7 +105,7 @@ layout: ../layouts/Layout.astro
   <div class="image-wrapper">
     <img src="/index/wine.jpg" alt="ワイン" />
     <div class="image-popup">
-      <p>ワインとコーヒーを楽しむ時間は、研究の合間の大切なリフレッシュタイムです。</p>
+      <p>三年間住んでいたオーストラリアで訪れたワイナリー</p>
     </div>
   </div>
 </div>
