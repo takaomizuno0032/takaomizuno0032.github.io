@@ -2,10 +2,41 @@
 interface Props {
 	title: string;
 	description?: string;
+	ogImage?: string;
 }
 
-const { title, description = "Research Engineer and Technology Enthusiast" } = Astro.props;
+const {
+	title,
+	description = "水野喬夫 (Takao Mizuno) - Research Engineer. セキュリティ、データプライバシー、ブロックチェーン技術に興味を持つエンジニア。",
+	ogImage = "/og-image.png"
+} = Astro.props;
 const currentPath = Astro.url.pathname;
+const siteUrl = "https://tmizuno.net";
+const canonicalUrl = new URL(currentPath, siteUrl).href;
+
+// 構造化データ (JSON-LD)
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Takao Mizuno",
+	"alternateName": "水野喬夫",
+	"url": siteUrl,
+	"jobTitle": "Research Engineer",
+	"alumniOf": [
+		{
+			"@type": "CollegeOrUniversity",
+			"name": "The University of Queensland"
+		},
+		{
+			"@type": "CollegeOrUniversity",
+			"name": "The University of Tokyo"
+		}
+	],
+	"knowsAbout": ["Security", "Data Privacy", "Blockchain", "Software Engineering"],
+	"sameAs": [
+		"https://x.com/taka_water_32"
+	]
+};
 ---
 
 <!doctype html>
@@ -14,10 +45,31 @@ const currentPath = Astro.url.pathname;
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Takao Mizuno" />
+		<meta name="author" content="Takao Mizuno (水野喬夫)" />
+		<meta name="keywords" content="Takao Mizuno, 水野喬夫, Research Engineer, セキュリティ, ブロックチェーン, Software Engineer" />
+		<link rel="canonical" href={canonicalUrl} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<!-- OGP (Open Graph Protocol) -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={`${siteUrl}${ogImage}`} />
+		<meta property="og:site_name" content="Takao Mizuno (水野喬夫)" />
+		<meta property="og:locale" content="ja_JP" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@taka_water_32" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+		<!-- 構造化データ (JSON-LD) -->
+		<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 	</head>
 	<body>
 		<div class="container">
