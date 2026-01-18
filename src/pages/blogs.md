@@ -89,16 +89,6 @@ layout: ../layouts/Layout.astro
 # Blogs
 
 <div class="blogs-container">
-	<div class="blogs-grid">
-		<a href="/blog/example-post-1" class="blog-card">
-			<img src="/blog/example-post-1/image.jpg" alt="Blog post image" class="blog-image" />
-			<div class="blog-content">
-				<span class="blog-category">Category</span>
-				<h2 class="blog-title">今後ポスト予定です！</h2>
-				<p class="blog-description">自己紹介</p>
-				<p class="blog-date">2026.01.06</p>
-			</div>
-		</a>
-
+	<p>Coming Soon...</p>
 </div>
 
