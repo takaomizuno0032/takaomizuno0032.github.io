@@ -80,9 +80,12 @@ layout: ../layouts/Layout.astro
 
 # Takao Mizuno
 
-## 自己紹介
+## About Me
 
 技術によって社会を良くしていくことに貢献することが自分の存在意義だと思っています。セキュリティ、データの安全な扱い、ブロックチェーンに興味があります。
+
+仕事のご相談はXのDM、もしくは以下のメールにお願いします。
+- Email: waterhawk0032@gmail.com
 
 ## Education
 
@@ -100,7 +103,7 @@ layout: ../layouts/Layout.astro
 - **2024~2025**, Secure Vertex Inc., Chief Technology Officer
 - **2020~2022**, Amiya, Inc., Software Engineer
 
-## 趣味
+## Hobby 
 
 ワインとコーヒー
 
