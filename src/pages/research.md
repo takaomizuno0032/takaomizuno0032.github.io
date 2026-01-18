@@ -1,33 +1,32 @@
 ---
-title: Research
-description: Research projects on distributed ledger technology, blockchain security, and cybersecurity
+title: 研究
+description: 分散台帳技術、ブロックチェーンセキュリティ、サイバーセキュリティに関する研究プロジェクト
 layout: ../layouts/Layout.astro
 ---
 
-# Research
+# 研究
 
-## Development of a Platform for Storing LiDAR Sensor Data Using Distributed Ledger Technology
+## 分散台帳技術を用いたLiDARセンサーデータ保存プラットフォームの研究開発
+自動運転車の開発において、経路計画には3D地図情報が使用されます。しかし、工事や災害によって地形が変化すると、地図情報が古くなり、自動運転車の運行に支障をきたす可能性があります。
+この課題を解決するため、国立研究開発法人情報通信研究機構（NICT）の委託研究として、LiDARセンサーデータをリアルタイムで分散台帳に保存・更新するプラットフォームを開発しました。本プロジェクトは2023年にNICTから最高評価を受けています。
 
-In the development of autonomous vehicles, 3D map information is used for path planning. However, if the terrain changes due to construction or disasters, the map information may become outdated, potentially hindering the operation of autonomous vehicles.
+このプラットフォームは、LiDARデータを分散台帳に保存することでデータの完全性を保証し、データが改ざんされていないことを担保します。自動運転用のデータは人命に直結するため、データの信頼性は極めて重要です。分散台帳技術を活用することで、データの改ざんを防止し、信頼性を向上させることができます。
+また、データの信頼性をさらに向上させるため、各交差点で分散台帳を運用するノードが自律的に増殖するシステムを開発しました。
 
-To solve this issue, we developed a platform for storing and updating LiDAR sensor data on a distributed ledger in real-time as part of a commissioned research project by the National Institute of Information and Communications Technology (NICT). The project received the highest evaluation ranking from NICT in 2023.
+残された課題として、走行中の車両からのリアルタイムLiDARセンサーデータを分散台帳に保存した場合、3D地図情報をどれだけ正確に再構築できるかを検証する必要があります。
 
-This platform guarantees the integrity of data by storing the LiDAR data on a distributed ledger, ensuring that the data is not tampered with. Since data for autonomous driving is directly related to human lives, the reliability of the data is crucial. By using distributed ledger technology, we can prevent data tampering and enhance the reliability of the data.
+## Llama2を用いたランサムウェア支払いに使用されるビットコイン取引の非匿名化に関する研究
+研究室: クイーンズランド大学 UQ Cyber
 
-Additionally, to further improve data reliability, we developed a system in which nodes autonomously proliferate to run the distributed ledger at each intersection. This system is currently pending patent approval.
+Mentor: Prof. Ryan Ko
 
-One remaining challenge is to see how accurately 3D map information can be reconstructed when real-time LiDAR sensor data from moving vehicles is stored on the distributed ledger.
+近年の暗号資産の普及に伴い、ランサムウェアによる被害が増加しています。ランサムウェアとは、コンピュータに感染してデータを暗号化し、復号キーを要求するマルウェアの一種です。被害者は復号キーを得るために支払いを要求されますが高い匿名性を持つビットコインは、これらの支払いによく使用されます。
+既存の研究では、ビットコイン取引を分析することで、ランサムウェア支払いに使用された取引を特定することに焦点を当ててきました。しかし、ビットコイン取引の高い匿名性のため、特定は困難です。
+本研究では、大規模言語モデルを活用して外部情報を集約し、ビットコイン取引を非匿名化する手法を提案しました。
 
-## Research on De-anonymization of Bitcoin Transactions Used for Ransomware Payments Using Llama2
+研究成果は学内の研究発表会で発表され、優秀論文賞としてノミネートされました。
 
-With the recent rise of cryptocurrency, the damage caused by ransomware has been increasing. Ransomware is a type of malware that infects computers, encrypts data, and demands a decryption key. Victims are required to make payments to obtain the decryption key. Due to its high level of anonymity, Bitcoin is often used for these payments.
+## Windowsイベントログを用いた不正アクセス検知システムの開発
 
-Existing research has focused on identifying transactions used for ransomware payments by analyzing Bitcoin transactions. However, due to the high level of anonymity in Bitcoin transactions, it is challenging to identify them. In this research, we propose a method that leverages large language models to aggregate external information and de-anonymize Bitcoin transactions.
-
-The research results are expected to be published in a future paper.
-
-## Development of an Unauthorized Access Detection System Using Windows Event Logs
-
-To improve the information security of companies, I was responsible for developing an unauthorized access detection system using Windows Event Logs. This system collects information recorded in the Windows Event Logs and detects abnormal access.
-
-In this system development, I developed an agent for collecting Windows Event Logs from Windows servers provided on AWS. This system is now being offered to companies and has been adopted by many enterprises.
+企業の情報セキュリティ向上のため、Windowsイベントログを用いた不正アクセス検知システムの開発を担当しました。このシステムは、Windowsイベントログに記録された情報を収集し、異常なアクセスを検知します。
+本システム開発では、AWS上に構築されたWindowsサーバーからWindowsイベントログを収集するエージェントを開発しました。このシステムは現在、企業向けに提供されており、多くの企業に採用されています。

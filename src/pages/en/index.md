@@ -1,7 +1,7 @@
 ---
 title: Takao Mizuno - Research Engineer
-description: Research Engineer at Preferred Networks Inc. Interested in security, data privacy, and blockchain technology.
-layout: ../layouts/Layout.astro
+description: Research Engineer interested in security, data privacy, and blockchain technology.
+layout: ../../layouts/Layout.astro
 ---
 
 <style is:global>
@@ -82,36 +82,36 @@ layout: ../layouts/Layout.astro
 
 ## About Me
 
-技術によって社会を良くしていくことに貢献することが自分の存在意義だと思っています。セキュリティ、データの安全な扱い、ブロックチェーンに興味があります。
+I believe my purpose is to contribute to making society better through technology. I am interested in security, data privacy, and blockchain.
 
-仕事のご相談はXのDM、もしくは以下のメールにお願いします。
+Feel free to reach out for work inquiries via DM on X or the email below.
 - Email: waterhawk0032@gmail.com
 
 ## Education
 
-- **2024**, M.S. in Information Technology at The University of Queensland  
+- **2024**, M.S. in Information Technology at The University of Queensland
   Lab: UQ Cyber (Nominated in one of the best master thesis)
 - **2020**, Bachelor in Education at The University of Tokyo
 
 ## Work Experience
 
-- **2022~Current**, Freelance Engineer  
-  - Ex. 
+- **2022~Current**, Freelance Engineer
+  - Ex.
     - Gaiax, Inc., Research Engineer
     - PeopleX Inc., AI Engineer
     - Preferred Networks Inc., Research Engineer
 - **2024~2025**, Secure Vertex Inc., Chief Technology Officer
 - **2020~2022**, Amiya, Inc., Software Engineer
 
-## Hobby 
+## Hobbies
 
-ワインとコーヒー
+Wine and Coffee
 
 <div class="hobby-images">
   <div class="image-wrapper">
-    <img src="/index/wine.jpg" alt="ワイン" />
+    <img src="/index/wine.jpg" alt="Wine" />
     <div class="image-popup">
-      <p>三年間住んでいたオーストラリアで訪れたワイナリー</p>
+      <p>A winery I visited in Australia, where I lived for three years</p>
     </div>
   </div>
 </div>

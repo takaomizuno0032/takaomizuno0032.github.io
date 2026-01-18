@@ -6,4 +6,11 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://tmizuno.net',
   integrations: [sitemap()],
+  i18n: {
+    defaultLocale: 'ja',
+    locales: ['ja', 'en'],
+    routing: {
+      prefixDefaultLocale: false, // 日本語は / 、英語は /en/
+    },
+  },
 });
