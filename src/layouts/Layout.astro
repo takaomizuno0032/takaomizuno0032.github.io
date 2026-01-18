@@ -5,14 +5,31 @@ interface Props {
 	ogImage?: string;
 }
 
+const currentPath = Astro.url.pathname;
+const currentLocale = currentPath.startsWith('/en') ? 'en' : 'ja';
+const isEnglish = currentLocale === 'en';
+
+// 言語別のデフォルト説明文
+const defaultDescription = isEnglish
+	? "Takao Mizuno - Research Engineer. Interested in security, data privacy, and blockchain technology."
+	: "水野喬夫 (Takao Mizuno) - Research Engineer. セキュリティ、データプライバシー、ブロックチェーン技術に興味を持つエンジニア。";
+
 const {
 	title,
-	description = "水野喬夫 (Takao Mizuno) - Research Engineer. セキュリティ、データプライバシー、ブロックチェーン技術に興味を持つエンジニア。",
+	description = defaultDescription,
 	ogImage = "/og-image.png"
 } = Astro.props;
-const currentPath = Astro.url.pathname;
+
 const siteUrl = "https://tmizuno.net";
 const canonicalUrl = new URL(currentPath, siteUrl).href;
+
+// 言語切り替え用のパス生成
+const pathWithoutLocale = currentPath.replace(/^\/en/, '') || '/';
+const jaPath = pathWithoutLocale;
+const enPath = `/en${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
+
+// ナビゲーションのベースパス
+const basePath = isEnglish ? '/en' : '';
 
 // 構造化データ (JSON-LD)
 const personSchema = {
@@ -40,7 +57,7 @@ const personSchema = {
 ---
 
 <!doctype html>
-<html lang="ja">
+<html lang={currentLocale}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -48,6 +65,9 @@ const personSchema = {
 		<meta name="author" content="Takao Mizuno (水野喬夫)" />
 		<meta name="keywords" content="Takao Mizuno, 水野喬夫, Research Engineer, セキュリティ, ブロックチェーン, Software Engineer" />
 		<link rel="canonical" href={canonicalUrl} />
+		<link rel="alternate" hreflang="ja" href={`${siteUrl}${jaPath}`} />
+		<link rel="alternate" hreflang="en" href={`${siteUrl}${enPath}`} />
+		<link rel="alternate" hreflang="x-default" href={`${siteUrl}${jaPath}`} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -59,7 +79,7 @@ const personSchema = {
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={`${siteUrl}${ogImage}`} />
 		<meta property="og:site_name" content="Takao Mizuno (水野喬夫)" />
-		<meta property="og:locale" content="ja_JP" />
+		<meta property="og:locale" content={isEnglish ? "en_US" : "ja_JP"} />
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -74,11 +94,16 @@ const personSchema = {
 	<body>
 		<div class="container">
 			<aside class="sidebar">
+				<div class="lang-switch">
+					<a href={jaPath} class={!isEnglish ? "lang-link active" : "lang-link"}>日本語</a>
+					<span class="lang-divider">/</span>
+					<a href={enPath} class={isEnglish ? "lang-link active" : "lang-link"}>EN</a>
+				</div>
 				<nav class="nav">
-					<a href="/" class={currentPath === "/" ? "nav-link active" : "nav-link"}>Home</a>
-					<a href="/research" class={currentPath === "/research" ? "nav-link active" : "nav-link"}>Research</a>
-					<a href="/publication" class={currentPath === "/publication" ? "nav-link active" : "nav-link"}>Publications</a>
-					<a href="/blogs" class={currentPath === "/blogs" ? "nav-link active" : "nav-link"}>Blogs</a>
+					<a href={`${basePath}/`} class={currentPath === `${basePath}/` || currentPath === basePath ? "nav-link active" : "nav-link"}>Home</a>
+					<a href={`${basePath}/research`} class={currentPath === `${basePath}/research` ? "nav-link active" : "nav-link"}>Research</a>
+					<a href={`${basePath}/publication`} class={currentPath === `${basePath}/publication` ? "nav-link active" : "nav-link"}>Publications</a>
+					<a href={`${basePath}/blogs`} class={currentPath === `${basePath}/blogs` ? "nav-link active" : "nav-link"}>Blogs</a>
 				</nav>
 				<div class="social-links">
 					<a href="https://x.com/taka_water_32" target="_blank" rel="noopener noreferrer" class="social-link">X (@taka_water_32)</a>
@@ -123,6 +148,31 @@ const personSchema = {
 		top: 0;
 		height: 100vh;
 		overflow-y: auto;
+	}
+
+	.lang-switch {
+		margin-bottom: 2rem;
+		font-size: 0.85rem;
+	}
+
+	.lang-link {
+		text-decoration: none;
+		color: #999;
+		transition: color 0.2s ease;
+	}
+
+	.lang-link:hover {
+		color: #000;
+	}
+
+	.lang-link.active {
+		color: #000;
+		font-weight: 500;
+	}
+
+	.lang-divider {
+		color: #ccc;
+		margin: 0 0.5rem;
 	}
 
 	.nav {
@@ -238,6 +288,10 @@ const personSchema = {
 			position: relative;
 			padding: 1.5rem 2rem;
 			border-bottom: 1px solid #eee;
+		}
+
+		.lang-switch {
+			margin-bottom: 1rem;
 		}
 
 		.nav {
