@@ -1,43 +1,90 @@
-# Astro Starter Kit: Minimal
+# tmizuno.net
 
-```sh
-npm create astro@latest -- --template minimal
+個人ポートフォリオサイト - 研究成果・職歴・ブログを公開
+
+## サイト情報
+
+- **URL**: https://tmizuno.net
+- **フレームワーク**: Astro
+- **ホスティング**: GitHub Pages
+
+## 開発手順
+
+### 1. セットアップ
+
+```bash
+yarn install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### 2. ローカル開発
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+yarn dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+ブラウザで http://localhost:4321 を開く
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### 3. ビルド確認
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+yarn build
+```
 
-## 🧞 Commands
+`dist/` フォルダに出力される
 
-All commands are run from the root of the project, from a terminal:
+### 4. デプロイ
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+mainブランチにマージすると自動デプロイされる
 
-## 👀 Want to learn more?
+```bash
+git checkout main
+git merge <your-branch>
+git push origin main
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+GitHub Actionsが自動でビルド＆デプロイを実行
+
+## ファイル構成
+
+```
+src/
+├── layouts/
+│   └── Layout.astro    # 共通レイアウト（ナビ、SEO設定）
+└── pages/
+    ├── index.md        # トップページ
+    ├── research.md     # 研究
+    ├── publication.md  # 出版物
+    ├── blogs.md        # ブログ一覧
+    └── blog/           # ブログ記事
+public/
+├── CNAME              # カスタムドメイン設定
+└── (画像ファイル)
+```
+
+## ブログ記事の追加方法
+
+1. `src/pages/blog/` に新しい `.md` ファイルを作成
+
+```markdown
+---
+title: 記事タイトル
+description: 記事の説明
+layout: ../../layouts/Layout.astro
+---
+
+# 記事タイトル
+
+本文...
+```
+
+2. `src/pages/blogs.md` にリンクを追加
+
+3. コミット＆mainにマージ
+
+## コマンド一覧
+
+| コマンド | 説明 |
+|---------|------|
+| `yarn dev` | ローカル開発サーバー起動 |
+| `yarn build` | 本番用ビルド |
+| `yarn preview` | ビルド結果のプレビュー |
