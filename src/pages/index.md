@@ -95,7 +95,9 @@ layout: ../layouts/Layout.astro
 
 ## Work Experience
 
-- **2022~Current**, Freelance Engineer  
+- **2026~Current**, Preferred Networks Inc., Research Engineer  
+  - Research on cybersecurity and LLM
+- **2022~2026**, Freelance Engineer  
   - Ex. 
     - Gaiax, Inc., Research Engineer
     - PeopleX Inc., AI Engineer
