@@ -84,8 +84,8 @@ layout: ../../layouts/Layout.astro
 
 I believe my purpose is to contribute to making society better through technology. I am interested in security, data privacy, and blockchain.
 
-Feel free to reach out for work inquiries via DM on X or the email below.
-- Email: waterhawk0032@gmail.com
+Feel free to reach out for work inquiries via DM on X.
+- X: @taka_water_32 
 
 ## Education
 

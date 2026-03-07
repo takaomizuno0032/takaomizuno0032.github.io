@@ -84,8 +84,8 @@ layout: ../layouts/Layout.astro
 
 技術によって社会を良くしていくことに貢献することが自分の存在意義だと思っています。セキュリティ、データの安全な扱い、ブロックチェーンに興味があります。
 
-仕事のご相談はXのDM、もしくは以下のメールにお願いします。
-- Email: waterhawk0032@gmail.com
+仕事のご相談はXのDMにお願いいたします。
+- X: @taka_water_32
 
 ## Education
 
